@@ -1,15 +1,16 @@
 # --------------------------------------------
 # PyCan V.: 0.0.5 Build 18
 # #main
-# Copyright (C) 2022 celeste-42bit
+# Copyright (C) 2022 celeste-42bit, HayleySilver
 # https://github.com/celeste-42bit/pycan
 # firmware : rp2-pico-20210202-v1.14.uf2
 # --------------------------------------------
 
-from bmp280 import *
+from pycanbmp280 import *
 from machine import Pin, I2C
 import utime
 import csv
+import 
 
 ERROR = -3  # hPa
 
@@ -75,7 +76,7 @@ while True:
     temperature_k = temperature_c + 273.15  # degree kelvin
     # accquire pressure
     pressure = ( bmp280_obj.pressure * 0.01 ) + ERROR  # hPa
-    # accquire alt values from IBF
+    # accquire alt values from HYP
     altitude = altitude_HYP(pressure, temperature_k)
 
 

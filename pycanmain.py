@@ -10,9 +10,9 @@ from pycanbmp280 import *
 from machine import Pin, I2C
 import utime
 import csv
-import pycancsv
+from pycancsv import w2csv
 
-ERROR = -3  # hPa
+ERROR = +14  # hPa
 
 # init I2C
 i2c_obj = I2C(0,              # I2C id
@@ -40,7 +40,7 @@ bmp280_obj.standby = BMP280_STANDBY_250
 bmp280_obj.iir = BMP280_IIR_FILTER_2
 # -----------------------------------------------
 
-def altitude_HYP(hPa , temperature):
+def altitude_HYP(hPa , temperature):  # TODO compare the hypsometric equasion to the International one. Which one suits our needs more?
     # Hypsometric Equation (Temp compensated) (Max Altitude < 11 Km above sea level)
     temperature = temperature
     local_pressure = hPa
@@ -50,11 +50,8 @@ def altitude_HYP(hPa , temperature):
     alt = (((pressure_ratio**(1/5.257)) - 1) * temperature ) / 0.0065
     return alt
 
-def w2csv(row):
-    with open("data.csv", "w", encoding='UTF8') as f:
-        # writer = csv.writer(f)
-        csv.writer.writerow(row)
-        print("WRT")
+# def w2csv(row):  # deprecated w2csv due to impl of w2csv class and modules
+#     pass
 
 def createcsvrow(data):  # pass data as list!
     # TODO: create row out of data list!

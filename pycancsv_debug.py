@@ -34,7 +34,7 @@ def w2csv(row):
                 print(str(e))
 
 
-rows = [1, 0, "new", 4, 176, 63.5, 7, 22, 0o3221, 1]
+
 while True:
+    rows = [1, 0, "new", 4, 176, 63.5, 7, 22, 0o3221, 1]
     w2csv(rows)
-    time.sleep(1)

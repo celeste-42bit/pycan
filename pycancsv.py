@@ -1,5 +1,5 @@
 # --------------------------------------------
-# pycancsv V.: 0.0.2 Build 1
+# pycancsv V.: 0.0.2 Build 2
 # #csvwriter
 # Copyright (C) 2022 celeste-42bit
 # REPO: https://github.com/celeste-42bit/pycan

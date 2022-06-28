@@ -10,7 +10,7 @@ from pycanbmp280 import *
 from machine import Pin, I2C
 import utime
 import csv
-import 
+import pycancsv
 
 ERROR = -3  # hPa
 

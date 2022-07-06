@@ -5,7 +5,7 @@ Demo and flight software for the "Project 7-Down" CanSat by KSat
 ## General
 
 > Status: work-in-progress<br><br>
-> Version: 0.0.1<br><br>
+> Version: 0.5.1<br><br>
 > Platform: Raspberry Pi Pico Rev.3<br>
 
 ## Platform

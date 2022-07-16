@@ -4,7 +4,7 @@
 # Copyright (C) 2022 celeste-42bit
 # REPO: https://github.com/celeste-42bit/pycan
 # DOCS: https://github.com/celeste-42bit/pycan/docs.md
-# firmware : rp2-pico-20210202-v1.14.uf2
+# firmware : rp2-pico-20220616-v1.19.uf2
 # --------------------------------------------
 
 from pycanbmp import *

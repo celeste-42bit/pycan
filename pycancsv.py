@@ -7,26 +7,24 @@
 # firmware : rp2-pico-20210202-v1.14.uf2
 # --------------------------------------------
 
-from os.path import getsize
 import time
 
 start_time = time.time()
 
+def w2csv(row):  # row is the list of sensor data passed in to write into the file
+    with open("data.csv", "a", encoding="UTF8") as f:
+        try:
+            cropped_row = str(row)
+            compact = str(time.time() - start_time) + ", " + cropped_row[1:-1] + "\n"  # row[1:-1] removes the list brackets (1st and last char are being chopped off)
+            # FORMAT: Time, Altitude, Pressure, Temperature
+            f.write(compact)
+            print(compact)  # debug only
+        except Exception:
+            pass
 
-def w2csv(row):
-    if getsize("data.csv") == 0:
-        with open("data.csv", "w", encoding="UTF8") as f:
-            try:
-                compact = str(time.time()) + " " + str(row) + "\n"
-                f.write(compact)
-                print(str(time.time()), "W-N: ", str(row))  # debug only! TODO remove!
-            except Exception as e:
-                pass
-    else:
-        with open("data.csv", "a", encoding="UTF8") as f:
-            try:
-                compact = str(time.time()) + " " + str(row) + "\n"  # TODO write time into list by using list.append()
-                f.write(compact)
-                print(str(time.time()), "W-A: ", str(row))  # debug only! TODO remove!
-            except Exception as e:
-                pass
+def header():
+    with open("data.csv", "a", encoding="UTF-8") as f:
+        try:
+            f.write("Time, Altitude, Pressure, Temperature" + "\n")
+        except Exception:
+            pass

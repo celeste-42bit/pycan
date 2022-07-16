@@ -4,7 +4,7 @@
 # Copyright (C) 2018-2022 David Stenwall Wahlund (david@dafnet.se)
 # Forked by: celeste-42bit; 17.03.2022; 12:33; MODIFIED
 # https://github.com/celeste-42bit/pycan
-# firmware : rp2-pico-20210202-v1.14.uf2
+# firmware : rp2-pico-20220616-v1.19.uf2
 # --------------------------------------------
 
 from micropython import const
